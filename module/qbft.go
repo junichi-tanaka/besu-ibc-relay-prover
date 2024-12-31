@@ -82,7 +82,7 @@ func (cs *ConsensusState) ClientType() string {
 }
 
 func (cs *ConsensusState) GetTimestamp() uint64 {
-	panic("not implemented")
+	return cs.Timestamp
 }
 
 func (cs *ConsensusState) ValidateBasic() error {

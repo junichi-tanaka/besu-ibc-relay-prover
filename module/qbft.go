@@ -1,6 +1,8 @@
 package module
 
 import (
+	"time"
+
 	storetypes "cosmossdk.io/store/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -82,7 +84,7 @@ func (cs *ConsensusState) ClientType() string {
 }
 
 func (cs *ConsensusState) GetTimestamp() uint64 {
-	return cs.Timestamp
+	return uint64(time.Unix(int64(cs.Timestamp), 0).UnixNano())
 }
 
 func (cs *ConsensusState) ValidateBasic() error {

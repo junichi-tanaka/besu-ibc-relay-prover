@@ -147,7 +147,7 @@ func (pr *Prover) CheckRefreshRequired(counterparty core.ChainInfoICS02Querier) 
 
 	var cs exported.ClientState
 	if err := pr.chain.Codec().UnpackAny(resCs.ClientState, &cs); err != nil {
-		return false, fmt.Errorf("failed to unpack Any into tendermint client state: %v", err)
+		return false, fmt.Errorf("failed to unpack Any into besu client state: %v", err)
 	}
 
 	resCons, err := counterparty.QueryClientConsensusState(cpQueryCtx, cs.GetLatestHeight())
@@ -157,7 +157,7 @@ func (pr *Prover) CheckRefreshRequired(counterparty core.ChainInfoICS02Querier) 
 
 	var cons exported.ConsensusState
 	if err := pr.chain.Codec().UnpackAny(resCons.ConsensusState, &cons); err != nil {
-		return false, fmt.Errorf("failed to unpack Any into tendermint consensus state: %v", err)
+		return false, fmt.Errorf("failed to unpack Any into besu consensus state: %v", err)
 	}
 	lcLastTimestamp := time.Unix(0, int64(cons.GetTimestamp()))
 

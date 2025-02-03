@@ -4,7 +4,7 @@ This is an e2e demo and test between two hyperledger besu chains using yui-relay
 
 ## Requirements
 
-First, need to install go >= v1.20 and node >= v16.
+First, need to install go >= v1.22 and node >= v20.
 
 Also, need to install npm dependencies:
 ```sh
@@ -16,7 +16,7 @@ $ npm install
 Just execute the single command:
 
 ```sh
-$ make test
+$ make network-qbft test
 ```
 
 The above commands execute the following in sequence:

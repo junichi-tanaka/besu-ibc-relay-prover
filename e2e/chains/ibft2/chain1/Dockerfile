@@ -1,4 +1,4 @@
-FROM hyperledger/besu:24.3.0
+FROM hyperledger/besu:24.5.1
 
 USER root
 

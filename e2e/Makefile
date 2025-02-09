@@ -44,3 +44,7 @@ test: yrly
 	$(MAKE) handshake
 	$(MAKE) relay
 	$(MAKE) network-down
+
+.PHONY: test-ibft2
+test-ibft2: CONSENSUS_TYPE := ibft2
+test-ibft2: yrly deploy init handshake relay network-down

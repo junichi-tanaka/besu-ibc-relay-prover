@@ -33,3 +33,9 @@ The above commands execute the following in sequence:
    - `make relay`
 6. Shutdown two HB chains
    - `make network-down`
+
+### IBFT2
+If you want to test with IBFT2, please do the following commands.
+```sh
+$ make network-ibft2 test-ibft2
+```
